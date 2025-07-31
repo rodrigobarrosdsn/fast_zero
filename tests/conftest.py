@@ -32,7 +32,6 @@ def _mock_db_time(*, model, time=datetime(2025, 5, 20)):
         if hasattr(target, 'updated_at'):
             target.updated_at = time
         print(target)
-        breakpoint()
 
     event.listen(model, 'before_insert', fake_time_hook)
     yield time
